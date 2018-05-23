@@ -4439,3 +4439,363 @@
 2018-05-22 16:14:51,806 INFO     [chan 0] sftp session closed.
 2018-05-22 16:14:51,808 DEBUG    [chan 0] EOF sent (0)
 2018-05-22 16:14:51,811 DEBUG    EOF in transport thread
+2018-05-23 10:24:41,219 DEBUG    starting thread (client mode): 0x6619828
+2018-05-23 10:24:41,220 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:41,266 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:41,266 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:41,313 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:41,314 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:41,314 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:41,315 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:41,315 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:41,316 DEBUG    Compression agreed: none
+2018-05-23 10:24:41,369 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:41,370 DEBUG    Switch to new keys ...
+2018-05-23 10:24:41,371 DEBUG    Attempting password auth...
+2018-05-23 10:24:41,492 DEBUG    userauth is OK
+2018-05-23 10:24:41,540 INFO     Authentication (password) successful!
+2018-05-23 10:24:41,543 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:41,588 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:41,588 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:41,667 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:41,668 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:41,712 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:41,753 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:41,754 DEBUG    [chan 0] stat(b'/karmaresponse_centrodeganas/export/unsubs_20180523.csv')
+2018-05-23 10:24:41,804 DEBUG    [chan 0] stat(b'/karmaresponse_centrodeganas/export/unsubs_20180523.csv')
+2018-05-23 10:24:41,845 DEBUG    [chan 0] open(b'/karmaresponse_centrodeganas/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:41,888 DEBUG    [chan 0] open(b'/karmaresponse_centrodeganas/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:42,013 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:42,070 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:42,071 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:42,072 DEBUG    EOF in transport thread
+2018-05-23 10:24:42,111 DEBUG    starting thread (client mode): 0x67cf358
+2018-05-23 10:24:42,112 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:42,152 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:42,153 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:42,193 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:42,194 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:42,194 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:42,194 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:42,195 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:42,195 DEBUG    Compression agreed: none
+2018-05-23 10:24:42,237 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:42,238 DEBUG    Switch to new keys ...
+2018-05-23 10:24:42,238 DEBUG    Attempting password auth...
+2018-05-23 10:24:42,351 DEBUG    userauth is OK
+2018-05-23 10:24:42,394 INFO     Authentication (password) successful!
+2018-05-23 10:24:42,396 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:42,432 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:42,433 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:42,511 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:42,512 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:42,550 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:42,593 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:42,594 DEBUG    [chan 0] stat(b'/karmaresponse_clickmarchefr/export/unsubs_20180523.csv')
+2018-05-23 10:24:42,635 DEBUG    [chan 0] stat(b'/karmaresponse_clickmarchefr/export/unsubs_20180523.csv')
+2018-05-23 10:24:42,673 DEBUG    [chan 0] open(b'/karmaresponse_clickmarchefr/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:42,712 DEBUG    [chan 0] open(b'/karmaresponse_clickmarchefr/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:42,943 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:42,999 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:43,000 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:43,001 DEBUG    EOF in transport thread
+2018-05-23 10:24:43,037 DEBUG    starting thread (client mode): 0x67d2ef0
+2018-05-23 10:24:43,038 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:43,076 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:43,076 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:43,113 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:43,113 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:43,114 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:43,114 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:43,114 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:43,114 DEBUG    Compression agreed: none
+2018-05-23 10:24:43,155 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:43,156 DEBUG    Switch to new keys ...
+2018-05-23 10:24:43,157 DEBUG    Attempting password auth...
+2018-05-23 10:24:43,262 DEBUG    userauth is OK
+2018-05-23 10:24:43,301 INFO     Authentication (password) successful!
+2018-05-23 10:24:43,303 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:43,336 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:43,337 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:43,408 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:43,408 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:43,442 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:43,478 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:43,478 DEBUG    [chan 0] stat(b'/karmaresponse_clubdesoriginaux/export/unsubs_20180523.csv')
+2018-05-23 10:24:43,518 DEBUG    [chan 0] stat(b'/karmaresponse_clubdesoriginaux/export/unsubs_20180523.csv')
+2018-05-23 10:24:43,553 DEBUG    [chan 0] open(b'/karmaresponse_clubdesoriginaux/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:43,589 DEBUG    [chan 0] open(b'/karmaresponse_clubdesoriginaux/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:43,729 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:43,778 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:43,778 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:43,780 DEBUG    EOF in transport thread
+2018-05-23 10:24:43,824 DEBUG    starting thread (client mode): 0x67c2a90
+2018-05-23 10:24:43,825 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:43,866 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:43,866 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:43,910 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:43,911 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:43,911 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:43,911 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:43,912 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:43,912 DEBUG    Compression agreed: none
+2018-05-23 10:24:43,954 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:43,955 DEBUG    Switch to new keys ...
+2018-05-23 10:24:43,956 DEBUG    Attempting password auth...
+2018-05-23 10:24:44,069 DEBUG    userauth is OK
+2018-05-23 10:24:44,115 INFO     Authentication (password) successful!
+2018-05-23 10:24:44,116 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:44,154 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:44,155 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:44,233 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:44,234 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:44,272 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:44,310 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:44,311 DEBUG    [chan 0] stat(b'/karmaresponse_coindesachats/export/unsubs_20180523.csv')
+2018-05-23 10:24:44,353 DEBUG    [chan 0] stat(b'/karmaresponse_coindesachats/export/unsubs_20180523.csv')
+2018-05-23 10:24:44,392 DEBUG    [chan 0] open(b'/karmaresponse_coindesachats/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:44,431 DEBUG    [chan 0] open(b'/karmaresponse_coindesachats/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:44,591 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:44,648 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:44,649 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:44,650 DEBUG    EOF in transport thread
+2018-05-23 10:24:44,698 DEBUG    starting thread (client mode): 0x67d2ba8
+2018-05-23 10:24:44,699 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:44,749 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:44,750 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:44,799 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:44,799 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:44,800 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:44,800 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:44,800 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:44,801 DEBUG    Compression agreed: none
+2018-05-23 10:24:44,852 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:44,853 DEBUG    Switch to new keys ...
+2018-05-23 10:24:44,853 DEBUG    Attempting password auth...
+2018-05-23 10:24:44,985 DEBUG    userauth is OK
+2018-05-23 10:24:45,037 INFO     Authentication (password) successful!
+2018-05-23 10:24:45,039 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:45,084 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:45,085 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:45,168 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:45,169 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:45,219 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:45,265 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:45,266 DEBUG    [chan 0] stat(b'/karmaresponse_foliessecretes/export/unsubs_20180523.csv')
+2018-05-23 10:24:45,317 DEBUG    [chan 0] stat(b'/karmaresponse_foliessecretes/export/unsubs_20180523.csv')
+2018-05-23 10:24:45,367 DEBUG    [chan 0] open(b'/karmaresponse_foliessecretes/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:45,416 DEBUG    [chan 0] open(b'/karmaresponse_foliessecretes/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:45,560 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:45,615 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:45,616 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:45,619 DEBUG    EOF in transport thread
+2018-05-23 10:24:45,660 DEBUG    starting thread (client mode): 0x67cfeb8
+2018-05-23 10:24:45,661 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:45,702 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:45,702 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:45,743 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:45,744 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:45,744 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:45,744 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:45,745 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:45,745 DEBUG    Compression agreed: none
+2018-05-23 10:24:45,787 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:45,788 DEBUG    Switch to new keys ...
+2018-05-23 10:24:45,788 DEBUG    Attempting password auth...
+2018-05-23 10:24:45,901 DEBUG    userauth is OK
+2018-05-23 10:24:45,944 INFO     Authentication (password) successful!
+2018-05-23 10:24:45,945 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:45,983 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:45,983 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:46,060 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:46,060 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:46,101 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:46,141 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:46,142 DEBUG    [chan 0] stat(b'/karmaresponse_goldcoastsurprise/export/unsubs_20180523.csv')
+2018-05-23 10:24:46,183 DEBUG    [chan 0] stat(b'/karmaresponse_goldcoastsurprise/export/unsubs_20180523.csv')
+2018-05-23 10:24:46,222 DEBUG    [chan 0] open(b'/karmaresponse_goldcoastsurprise/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:46,261 DEBUG    [chan 0] open(b'/karmaresponse_goldcoastsurprise/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:46,383 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:46,436 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:46,437 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:46,438 DEBUG    EOF in transport thread
+2018-05-23 10:24:46,477 DEBUG    starting thread (client mode): 0x67e0e10
+2018-05-23 10:24:46,478 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:46,520 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:46,521 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:46,562 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:46,562 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:46,563 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:46,563 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:46,563 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:46,564 DEBUG    Compression agreed: none
+2018-05-23 10:24:46,605 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:46,606 DEBUG    Switch to new keys ...
+2018-05-23 10:24:46,607 DEBUG    Attempting password auth...
+2018-05-23 10:24:46,720 DEBUG    userauth is OK
+2018-05-23 10:24:46,764 INFO     Authentication (password) successful!
+2018-05-23 10:24:46,765 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:46,801 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:46,802 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:46,879 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:46,880 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:46,919 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:46,956 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:46,956 DEBUG    [chan 0] stat(b'/karmaresponse_mailsvolant/export/unsubs_20180523.csv')
+2018-05-23 10:24:46,998 DEBUG    [chan 0] stat(b'/karmaresponse_mailsvolant/export/unsubs_20180523.csv')
+2018-05-23 10:24:47,035 DEBUG    [chan 0] open(b'/karmaresponse_mailsvolant/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:47,074 DEBUG    [chan 0] open(b'/karmaresponse_mailsvolant/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:47,187 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:47,231 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:47,231 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:47,233 DEBUG    EOF in transport thread
+2018-05-23 10:24:47,281 DEBUG    starting thread (client mode): 0x69ef828
+2018-05-23 10:24:47,281 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:47,331 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:47,331 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:47,379 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:47,380 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:47,380 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:47,381 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:47,381 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:47,381 DEBUG    Compression agreed: none
+2018-05-23 10:24:47,438 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:47,440 DEBUG    Switch to new keys ...
+2018-05-23 10:24:47,441 DEBUG    Attempting password auth...
+2018-05-23 10:24:47,568 DEBUG    userauth is OK
+2018-05-23 10:24:47,618 INFO     Authentication (password) successful!
+2018-05-23 10:24:47,619 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:47,664 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:47,664 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:47,746 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:47,747 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:47,794 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:47,839 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:47,840 DEBUG    [chan 0] stat(b'/karmaresponse_mercadodebarrio/export/unsubs_20180523.csv')
+2018-05-23 10:24:47,890 DEBUG    [chan 0] stat(b'/karmaresponse_mercadodebarrio/export/unsubs_20180523.csv')
+2018-05-23 10:24:47,936 DEBUG    [chan 0] open(b'/karmaresponse_mercadodebarrio/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:47,982 DEBUG    [chan 0] open(b'/karmaresponse_mercadodebarrio/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:48,124 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:48,183 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:48,184 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:48,186 DEBUG    EOF in transport thread
+2018-05-23 10:24:48,228 DEBUG    starting thread (client mode): 0x69eff60
+2018-05-23 10:24:48,228 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:48,269 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:48,269 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:48,310 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:48,311 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:48,312 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:48,312 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:48,312 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:48,313 DEBUG    Compression agreed: none
+2018-05-23 10:24:48,354 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:48,355 DEBUG    Switch to new keys ...
+2018-05-23 10:24:48,355 DEBUG    Attempting password auth...
+2018-05-23 10:24:48,467 DEBUG    userauth is OK
+2018-05-23 10:24:48,509 INFO     Authentication (password) successful!
+2018-05-23 10:24:48,510 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:48,546 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:48,547 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:48,621 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:48,621 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:48,659 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:48,696 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:48,696 DEBUG    [chan 0] stat(b'/karmaresponse_messageurgent/export/unsubs_20180523.csv')
+2018-05-23 10:24:48,742 DEBUG    [chan 0] stat(b'/karmaresponse_messageurgent/export/unsubs_20180523.csv')
+2018-05-23 10:24:48,779 DEBUG    [chan 0] open(b'/karmaresponse_messageurgent/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:48,818 DEBUG    [chan 0] open(b'/karmaresponse_messageurgent/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:49,030 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:49,081 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:49,081 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:49,082 DEBUG    EOF in transport thread
+2018-05-23 10:24:50,128 DEBUG    starting thread (client mode): 0x69efbe0
+2018-05-23 10:24:50,129 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:50,172 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:50,172 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:50,212 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:50,213 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:50,213 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:50,213 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:50,213 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:50,214 DEBUG    Compression agreed: none
+2018-05-23 10:24:50,260 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:50,262 DEBUG    Switch to new keys ...
+2018-05-23 10:24:50,262 DEBUG    Attempting password auth...
+2018-05-23 10:24:50,377 DEBUG    userauth is OK
+2018-05-23 10:24:50,419 INFO     Authentication (password) successful!
+2018-05-23 10:24:50,421 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:50,457 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:50,457 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:50,534 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:50,534 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:50,571 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:50,609 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:50,609 DEBUG    [chan 0] stat(b'/karmaresponse_planzooes/export/unsubs_20180523.csv')
+2018-05-23 10:24:50,651 DEBUG    [chan 0] stat(b'/karmaresponse_planzooes/export/unsubs_20180523.csv')
+2018-05-23 10:24:50,689 DEBUG    [chan 0] open(b'/karmaresponse_planzooes/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:50,726 DEBUG    [chan 0] open(b'/karmaresponse_planzooes/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:50,843 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:50,896 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:50,897 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:50,898 DEBUG    EOF in transport thread
+2018-05-23 10:24:50,943 DEBUG    starting thread (client mode): 0x69ef978
+2018-05-23 10:24:50,944 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:50,990 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:50,991 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:51,036 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:51,037 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:51,037 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:51,037 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:51,037 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:51,038 DEBUG    Compression agreed: none
+2018-05-23 10:24:51,087 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:51,088 DEBUG    Switch to new keys ...
+2018-05-23 10:24:51,089 DEBUG    Attempting password auth...
+2018-05-23 10:24:51,210 DEBUG    userauth is OK
+2018-05-23 10:24:51,260 INFO     Authentication (password) successful!
+2018-05-23 10:24:51,261 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:51,303 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:51,304 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:51,391 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:51,392 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:51,435 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:51,481 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:51,481 DEBUG    [chan 0] stat(b'/karmaresponse_sunshineplanau/export/unsubs_20180523.csv')
+2018-05-23 10:24:51,527 DEBUG    [chan 0] stat(b'/karmaresponse_sunshineplanau/export/unsubs_20180523.csv')
+2018-05-23 10:24:51,572 DEBUG    [chan 0] open(b'/karmaresponse_sunshineplanau/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:51,617 DEBUG    [chan 0] open(b'/karmaresponse_sunshineplanau/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:51,759 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:51,809 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:51,810 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:51,812 DEBUG    EOF in transport thread
+2018-05-23 10:24:51,860 DEBUG    starting thread (client mode): 0x67e0cc0
+2018-05-23 10:24:51,860 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-05-23 10:24:51,912 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u3
+2018-05-23 10:24:51,912 INFO     Connected (version 2.0, client OpenSSH_7.4p1)
+2018-05-23 10:24:51,962 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2018-05-23 10:24:51,963 DEBUG    Kex agreed: ecdh-sha2-nistp256
+2018-05-23 10:24:51,963 DEBUG    HostKey agreed: ssh-ed25519
+2018-05-23 10:24:51,963 DEBUG    Cipher agreed: aes128-ctr
+2018-05-23 10:24:51,964 DEBUG    MAC agreed: hmac-sha2-256
+2018-05-23 10:24:51,964 DEBUG    Compression agreed: none
+2018-05-23 10:24:52,013 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-05-23 10:24:52,014 DEBUG    Switch to new keys ...
+2018-05-23 10:24:52,015 DEBUG    Attempting password auth...
+2018-05-23 10:24:52,145 DEBUG    userauth is OK
+2018-05-23 10:24:52,198 INFO     Authentication (password) successful!
+2018-05-23 10:24:52,201 DEBUG    [chan 0] Max packet in: 32768 bytes
+2018-05-23 10:24:52,248 DEBUG    Received global request "hostkeys-00@openssh.com"
+2018-05-23 10:24:52,248 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-05-23 10:24:52,329 DEBUG    [chan 0] Max packet out: 32768 bytes
+2018-05-23 10:24:52,330 DEBUG    Secsh channel 0 opened.
+2018-05-23 10:24:52,381 DEBUG    [chan 0] Sesch channel 0 request ok
+2018-05-23 10:24:52,426 INFO     [chan 0] Opened sftp connection (server version 3)
+2018-05-23 10:24:52,427 DEBUG    [chan 0] stat(b'/karmaresponse_vieenbleu/export/unsubs_20180523.csv')
+2018-05-23 10:24:52,477 DEBUG    [chan 0] stat(b'/karmaresponse_vieenbleu/export/unsubs_20180523.csv')
+2018-05-23 10:24:52,522 DEBUG    [chan 0] open(b'/karmaresponse_vieenbleu/export/unsubs_20180523.csv', 'rb')
+2018-05-23 10:24:52,571 DEBUG    [chan 0] open(b'/karmaresponse_vieenbleu/export/unsubs_20180523.csv', 'rb') -> 00000000
+2018-05-23 10:24:52,760 DEBUG    [chan 0] close(00000000)
+2018-05-23 10:24:52,820 INFO     [chan 0] sftp session closed.
+2018-05-23 10:24:52,821 DEBUG    [chan 0] EOF sent (0)
+2018-05-23 10:24:52,822 DEBUG    EOF in transport thread

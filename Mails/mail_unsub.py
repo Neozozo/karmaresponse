@@ -54,9 +54,6 @@ print(yesterday)
 def get_mails(mail, folder_name,startDate):
     day = str(int(dt.datetime.now().strftime('%Y%m%d'))) # Date of the day in format 'YYYYMMDD'
     outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
-    # for folder in outlook.Folders(mail).Folders:
-    #     print(folder)
-    #inbox = outlook.Folders('david@karmaresponse.com').Folders('Inbox')
     inbox = outlook.Folders(mail).Folders(folder_name)
     print(inbox.Name)
     unsub = ['\n']

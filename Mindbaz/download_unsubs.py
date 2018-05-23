@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
 np.seterr(divide='ignore', invalid='ignore')
 
-params = pd.read_json('/../params.json')  # read file
+params = pd.read_json('../params.json')  # read file
 params = params['params'].to_dict() # read the 'params' bloc
 
 server = params['server']
@@ -73,9 +73,3 @@ def download_all_unsubs(username,password,sources,filename):
         downloadFile(username[k],password[k],sources[k],filename)
 
 download_all_unsubs(username,password,sources,filename)
-
-def merge_all(sources, FILENAME):
-    for source in  sources:
-        with open('Daily/Unsub_MB_{}.csv'.format(day), 'w') as fw:
-
-            fw.write(unsublist)  # Write in Unsub_MB_{day}.csv
