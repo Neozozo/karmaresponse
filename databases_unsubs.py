@@ -37,6 +37,13 @@ np.seterr(divide='ignore', invalid='ignore')
 day = str(int(datetime.now().strftime('%Y%m%d'))) # Date of the day in format 'YYYYMMDD'
 hour = str(int(datetime.now().strftime('%H'))) + ':' + str(int(datetime.now().strftime('%M'))) # Hour in format 'HHMM'
 
+list_dates = []
+for k in range(0,7):
+    kdate = dt.datetime.now() - dt.timedelta(days=k)
+    kdate = kdate.strftime('%Y%m%d')
+    list_dates.append(kdate)
+print(list_dates)
+
 # ===============================================================================
 # Class & functions
 # ===============================================================================
@@ -77,12 +84,12 @@ def merge_drsender(file_paths, day): # Get all the unsub_files and merge them in
     :return: unsublist, list of all the unsubscribers of this day
     """
     DS_unsubs = ''
+    seen = []
     with open('DrSender/Daily/Unsub_DS_{}.csv'.format(day), 'w') as fw: # Open the file in which we will write today
         for path in file_paths:
             if path.startswith('DrSender'): # Make sure that we are using this function with DrSender's csvs
                 with open(path, 'r') as fr: # Open the unsub_file
                     DBname = path.split('/')[-2] # Get the database name out from the filename
-                    print(DBname)
                     timestamp = day # Current timestamp, to be used later
                     all_info = fr.read() # Read the unsub_file
                     filtered_info = list(set(all_info.split(';'))) # Filter the informations and eliminate the double while making a list
@@ -91,8 +98,12 @@ def merge_drsender(file_paths, day): # Get all the unsub_files and merge them in
                     for char in filtered_info: # Each information of the list is checked in order to keep only the mail adress
                         if char.find('@')!=-1:
                             char = char + ',' + DBname + ',' + day # Separate the mail address and the database name with a comma
-                            unsub.append(char) # Add the mail address to the list
-                            unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
+                            if char.split(',')[0] in seen:
+                                pass
+                            else:
+                                seen.append(char.split(',')[0])
+                                unsub.append(char) # Add the mail address to the list
+                                unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_DS_{day}.csv
                     DS_unsubs += unsublist
         fw.close()
@@ -105,12 +116,12 @@ def merge_mindbaz(file_paths, day): # Get all the unsub_files and merge them int
     :return: unsublist, list of all the unsubscribers of this day
     """
     MB_unsubs = ''
+    seen = []
     with open('Mindbaz/Daily/Unsub_MB_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
         for path in file_paths:
             if path.startswith('Mindbaz'):
                 with open(path, 'r') as fr: # Open the unsub_file
                     DBname = 'karmaresponse_' + path.split('/')[-2] # Get the database name out from the filename
-                    print(DBname)
                     all_info = fr.read() # Read the unsub_file
                     filtered_info = list(set(all_info.split('\n'))) # Filter the informations and eliminate the double while making a list
                     unsub = [','] # Start with a comma in order to separate properly in excel
@@ -118,8 +129,12 @@ def merge_mindbaz(file_paths, day): # Get all the unsub_files and merge them int
                     for char in filtered_info: # Each information of the list is checked in order to keep only the mail adress
                         if char.find('@')!=-1:
                             char = char.split(';')[0] + ',' + DBname + ',' + day # Separate the mail address and the database name with a comma
-                            unsub.append(char) # Add the mail address to the list
-                            unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
+                            if char.split(',')[0] in seen:
+                                pass
+                            else:
+                                seen.append(char.split(',')[0])
+                                unsub.append(char) # Add the mail address to the list
+                                unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                     MB_unsubs += unsublist
         fw.close()
@@ -133,6 +148,7 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
     :return: unsublist, list of all the unsubscribers of this day
     """
     CB_unsubs = ''
+    seen = []
     path_to_test = 'Cerberoos/csv/Tutorum/unsubs_{}.csv'
     if os.path.exists(path_to_test):
         with open('Cerberoos/Weekly/Unsub_CB_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
@@ -140,7 +156,6 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
                 if path.startswith('Cerberoos'):
                     with open(path, 'r') as fr: # Open the unsub_file
                         DBname = path.split('/')[-2] # Get the database name out from the filename
-                        print(DBname)
                         all_info = fr.read() # Read the unsub_file
                         filtered_info = list(set(all_info.split('\n'))) # Filter the informations and eliminate the double while making a list
                         unsub = [','] # Start with a comma in order to separate properly in excel
@@ -148,8 +163,12 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
                         for char in filtered_info: # Each information of the list is checked in order to keep only the mail adress
                             if char.find('@')!=-1:
                                 char = char.split(';')[0] + ',' + DBname + ',' + day # Separate the mail address and the database name with a comma
-                                unsub.append(char) # Add the mail address to the list
-                                unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
+                                if char.split(',')[0] in seen:
+                                    pass
+                                else:
+                                    seen.append(char.split(',')[0])
+                                    unsub.append(char) # Add the mail address to the list
+                                    unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                         fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                         CB_unsubs += unsublist
             fw.close()
@@ -182,38 +201,58 @@ def merge_all_weekly(day):
     DSunsubs = ''
     MBunsubs = ''
     ALL_unsubs = ''
+    seen = []
     for k in range(0,7):
         kdate = dt.datetime.now() - dt.timedelta(days=k)
         kdate = kdate.strftime('%Y%m%d')
         list_dates.append(kdate)
     if os.path.exists(path_to_test):
-        for date in list_dates:
-            try:
-                print(date)
-            except:
-                print('No Daily for {}'.format(date))
-        with open('MergedFiles/Weekly/ALL_Weekly_Unsubs_{}.csv'.format(day), 'w') as fw:
-            ALL_unsubs = DSunsubs + MBunsubs
-            fw.write(ALL_unsubs)
-            fw.close()
+        list_of_files = get_list_files_to_merge(list_dates)
+        with open('MergedFiles/Weekly/ALL_Weekly_Unsubs_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
+            for filepath in list_of_files:
+                with open(filepath, 'r') as fr: # Open the unsub_file
+                    print('Adding ' + filepath)
+                    all_info = fr.read() # Read the unsub_file
+                    filtered_info = list(set(all_info.split('\n'))) # Filter the informations and eliminate the double while making a list
+                    unsub = [','] # Start with a comma in order to separate properly in excel
+                    unsublist = ''
+                    for char in filtered_info: # Each information of the list is checked in order to keep only the mail adress
+                        if not char.split(',')[0] in seen:
+                            seen.append(char.split(',')[0])
+                            unsub.append(char) # Add the mail address to the list
+                            unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
+                    fw.write(unsublist) # Write in Unsub_MB_{day}.csv
+                fr.close()
+        fw.close()
+        #with open('MergedFiles/Weekly/ALL_Weekly_Unsubs_{}.csv'.format(day), 'w') as fw:
+            #ALL_unsubs = DSunsubs + MBunsubs
+            #fw.write(ALL_unsubs)
+            #fw.close()
 
 def get_list_files_to_merge(list_dates):
-    list_files_to_merge = []
     MBlist = []
     DSlist = []
     Maillist = []
+    print(list_dates)
     for date in list_dates:
-        MBlist.append('Mindbaz/Daily/Unsubs_MB_{}.csv'.format(date))
-        Maillist.append('Mindbaz/Daily/Unsubs_Mail_{}.csv'.format(date))
-        DSlist.append('Mindbaz/Daily/Unsubs_DS_{}.csv'.format(date))
-        files = MBlist + Maillist + DSlist
+        MBfile = 'Mindbaz/Daily/Unsub_MB_{}.csv'.format(date)
+        if os.path.isfile(MBfile):
+            MBlist.append('Mindbaz/Daily/Unsub_MB_{}.csv'.format(date))
+        Mailfile = 'Mails/Daily/Unsub_Mail_{}.csv'.format(date)
+        if os.path.isfile(Mailfile):
+            Maillist.append('Mails/Daily/Unsub_Mail_{}.csv'.format(date))
+        DSfile = 'DrSender/Daily/Unsub_DS_{}.csv'.format(date)
+        if os.path.isfile(DSfile):
+            DSlist.append('DrSender/Daily/Unsub_DS_{}.csv'.format(date))
+    list_files_to_merge = MBlist + Maillist + DSlist
+    return list_files_to_merge
 
 
 
-
-#DS,MB,CB,Mails = get_unsub_files(day)
-#DSunsubs = merge_drsender(DS, day)
-#MBunsubs = merge_mindbaz(MB, day)
-#CBunsubs = merge_cerberoos(CB, day)
-#merge_all_daily(day,DSunsubs,MBunsubs,'',CBunsubs)
+for current_date in list_dates:
+    DS,MB,CB,Mails = get_unsub_files(current_date)
+    DSunsubs = merge_drsender(DS, current_date)
+    MBunsubs = merge_mindbaz(MB, current_date)
+    CBunsubs = merge_cerberoos(CB, current_date)
+    merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
 merge_all_weekly(day)

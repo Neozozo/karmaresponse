@@ -52,24 +52,35 @@ filename = 'unsubs_' + str(day) + '.csv'
 cnopts = pysftp.CnOpts()
 cnopts.hostkeys = None
 
+list_dates = []
+for k in range(0,7):
+    kdate = dt.datetime.now() - dt.timedelta(days=k)
+    kdate = kdate.strftime('%Y%m%d')
+    list_dates.append(kdate)
+
 # Make connection to sFTP
-def downloadFile(user, pw, source, FILENAME):
+def downloadFile(user, pw, source, list_dates):
     try :
         with pysftp.Connection(server,username=user,password=pw,cnopts = cnopts) as sftp:
             if not os.path.exists(destination + str(source.split('_')[1])):
                 # create csv directory if not existing
                 os.makedirs(destination + str(source.split('_')[1]))
-            os.chdir(destination + str(source.split('_')[1]))
-            sftp.isfile('/' + source + '/export/' + FILENAME) ## TRUE
-            file = sftp.get('/' + source + '/export/' + FILENAME)
-            print("Downloaded: " + destination + str(source.split('_')[1]) + '/' + FILENAME)
-            os.chdir('../..')
+            for current_date in list_dates:
+                os.chdir(destination + str(source.split('_')[1]))
+                FILENAME = 'unsubs_' + str(current_date) + '.csv'
+                sftp.isfile('/' + source + '/export/' + FILENAME) ## TRUE
+                if os.path.exists(FILENAME):
+                    print(str(source.split('_')[1]) + ' ' + FILENAME + ' Already downloaded')
+                else:
+                    file = sftp.get('/' + source + '/export/' + FILENAME)
+                    print("Downloaded: " + destination + str(source.split('_')[1]) + '/' + FILENAME)
+                os.chdir('../..')
         sftp.close()
     except Exception as error:
         print(error)
 
-def download_all_unsubs(username,password,sources,filename):
+def download_all_unsubs(username,password,sources,list_dates):
     for k in range(0,len(username)):
-        downloadFile(username[k],password[k],sources[k],filename)
+        downloadFile(username[k],password[k],sources[k],list_dates)
 
-download_all_unsubs(username,password,sources,filename)
+download_all_unsubs(username,password,sources,list_dates)
