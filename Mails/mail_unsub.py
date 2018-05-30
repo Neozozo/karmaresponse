@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Get all emails sent to 'unsubscribe@karmaresponse.com' to create and export a csv file to be merged with other
+Get all emails sent to 'unsubscribe@karmaresponse.com' and 'info@karmaresponse.com' to create and export a csv file to be merged with other
     databases csv in order to unsubscribe all of them from all databases
 """
 

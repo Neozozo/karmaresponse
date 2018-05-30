@@ -42,7 +42,6 @@ for k in range(0,7):
     kdate = dt.datetime.now() - dt.timedelta(days=k)
     kdate = kdate.strftime('%Y%m%d')
     list_dates.append(kdate)
-print(list_dates)
 
 # ===============================================================================
 # Class & functions
@@ -65,7 +64,6 @@ def get_unsub_files(date): # Get the list of all the .csv files that contains al
                 if os.path.isdir(service + '/csv/' + DB_dir):
                     for unsub_file in os.listdir(service + '/csv/' + DB_dir):
                         if str(unsub_file).endswith(date + '.csv'): # Takes only the csv files
-                            print(service + '/csv/' + DB_dir + '/' + unsub_file)
                             if service == 'DrSender':
                                 DS_file_paths.append(service + '/csv/' + DB_dir + '/' + unsub_file) # Add the file path in the list
                             if service == 'Mindbaz':
@@ -233,7 +231,6 @@ def get_list_files_to_merge(list_dates):
     MBlist = []
     DSlist = []
     Maillist = []
-    print(list_dates)
     for date in list_dates:
         MBfile = 'Mindbaz/Daily/Unsub_MB_{}.csv'.format(date)
         if os.path.isfile(MBfile):
