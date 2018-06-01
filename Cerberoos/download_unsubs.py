@@ -13,7 +13,7 @@ __authors__ = 'David Gosset'
 __contact__ = 'davidgosset1994@gmail.com'
 __copyright__ = ''
 __license__ = ''
-__date__ = 'Fri May 11 00:00:00 2018'
+__date__ = 'Thu May 31 00:00:00 2018'
 
 # ===============================================================================
 # Import statements

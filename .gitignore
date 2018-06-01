@@ -1,3 +1,4 @@
 *.csv
 params.json
 *.log
+*.zip
