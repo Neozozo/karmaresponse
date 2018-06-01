@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+  #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 """
@@ -104,6 +104,7 @@ def merge_drsender(file_paths, day): # Get all the unsub_files and merge them in
                                 unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_DS_{day}.csv
                     DS_unsubs += unsublist
+                    print('\nFinished merging DrSender for {}'.format(day) + '\n')
         fw.close()
         return DS_unsubs
 
@@ -135,6 +136,7 @@ def merge_mindbaz(file_paths, day): # Get all the unsub_files and merge them int
                                 unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                     MB_unsubs += unsublist
+                    print('\nFinished merging Mindbaz for {}'.format(day) + '\n')
         fw.close()
         return MB_unsubs
 
@@ -147,7 +149,7 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
     """
     CB_unsubs = ''
     seen = []
-    path_to_test = 'Cerberoos/csv/Tutorum/unsubs_{}.csv'
+    path_to_test = 'Cerberoos/csv/Tutorum/unsubs_{}.csv'.format(day)
     if os.path.exists(path_to_test):
         with open('Cerberoos/Weekly/Unsub_CB_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
             for path in file_paths:
@@ -160,7 +162,7 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
                         unsublist = ''
                         for char in filtered_info: # Each information of the list is checked in order to keep only the mail adress
                             if char.find('@')!=-1:
-                                char = char.split(';')[0] + ',' + DBname + ',' + day # Separate the mail address and the database name with a comma
+                                char = char.split(',')[0] + ',' + DBname + ',' + day # Separate the mail address and the database name with a comma
                                 if char.split(',')[0] in seen:
                                     pass
                                 else:
@@ -169,6 +171,7 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
                                     unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                         fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                         CB_unsubs += unsublist
+                        print('\nFinished merging Cerberoos for {}'.format(day) + '\n')
             fw.close()
             return CB_unsubs
     else:
@@ -188,6 +191,7 @@ def merge_all_daily(day,DSunsubs,MBunsubs,Mailunsubs,CBunsubs):
         ALL_unsubs = DSunsubs + MBunsubs + Mailunsubs + CBunsubs
         fw.write(ALL_unsubs)
         fw.close()
+        print('\nFinished Global merging for {}'.format(day) + '\n')
 
 def merge_all_weekly(day):
     """
@@ -209,7 +213,7 @@ def merge_all_weekly(day):
         with open('MergedFiles/Weekly/ALL_Weekly_Unsubs_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
             for filepath in list_of_files:
                 with open(filepath, 'r') as fr: # Open the unsub_file
-                    print('Adding ' + filepath)
+                    print('\nAdding ' + filepath + '\n')
                     all_info = fr.read() # Read the unsub_file
                     filtered_info = list(set(all_info.split('\n'))) # Filter the informations and eliminate the double while making a list
                     unsub = [','] # Start with a comma in order to separate properly in excel
@@ -222,6 +226,7 @@ def merge_all_weekly(day):
                     fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                 fr.close()
         fw.close()
+        print('\nFinished Weekly merging\n')
         #with open('MergedFiles/Weekly/ALL_Weekly_Unsubs_{}.csv'.format(day), 'w') as fw:
             #ALL_unsubs = DSunsubs + MBunsubs
             #fw.write(ALL_unsubs)
@@ -245,11 +250,17 @@ def get_list_files_to_merge(list_dates):
     return list_files_to_merge
 
 
+current_date = day
+DS,MB,CB,Mails = get_unsub_files(current_date)
+DSunsubs = merge_drsender(DS, current_date)
+MBunsubs = merge_mindbaz(MB, current_date)
+CBunsubs = merge_cerberoos(CB, current_date)
+merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
 
-for current_date in list_dates:
-    DS,MB,CB,Mails = get_unsub_files(current_date)
-    DSunsubs = merge_drsender(DS, current_date)
-    MBunsubs = merge_mindbaz(MB, current_date)
-    CBunsubs = merge_cerberoos(CB, current_date)
-    merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
-merge_all_weekly(day)
+# for current_date in list_dates:
+#     DS,MB,CB,Mails = get_unsub_files(current_date)
+#     DSunsubs = merge_drsender(DS, current_date)
+#     MBunsubs = merge_mindbaz(MB, current_date)
+#     CBunsubs = merge_cerberoos(CB, current_date)
+#     merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
+# merge_all_weekly(day)

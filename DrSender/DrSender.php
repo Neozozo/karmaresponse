@@ -5,7 +5,6 @@ ini_set("display_startup_errors", 1);
 chdir(dirname(__FILE__));
 require_once(dirname(__FILE__) . "/webserviceApi.class.php");
 
-echo getcwd() . "\n";
 $str = file_get_contents('../params.json');
 $json_data = json_decode($str, true);
 $EStoken = $json_data['params']['EStoken'];
@@ -45,7 +44,7 @@ try {
 
     	fclose($fpES);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB  . "\xA" . "\xA";
 }
 
 
@@ -68,7 +67,7 @@ try {
 
     	fclose($fpFR);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB . "\xA" . "\xA";
 }
 
 
@@ -91,7 +90,7 @@ try {
 
     	fclose($fpIT);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB . "\xA" . "\xA";
 }
 
 
@@ -114,7 +113,7 @@ try {
 
     	fclose($fpAU);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB . "\xA" . "\xA";
 }
 
 
@@ -137,7 +136,7 @@ try {
 
     	fclose($fpSG);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB . "\xA" . "\xA";
 }
 
 
@@ -160,7 +159,7 @@ try {
 
     	fclose($fpID);
 
-		echo (string)$DB . ' done '  . "\xA";
+		echo "\xA" . 'Finished Downloading ' . (string)$DB . "\xA" . "\xA";
 }
 
 

@@ -70,17 +70,17 @@ def downloadFile(user, pw, source, list_dates):
                 FILENAME = 'unsubs_' + str(current_date) + '.csv'
                 sftp.isfile('/' + source + '/export/' + FILENAME) ## TRUE
                 if os.path.exists(FILENAME):
-                    print(str(source.split('_')[1]) + ' ' + FILENAME + ' Already downloaded')
+                    print('\n' + str(source.split('_')[1]) + ' ' + FILENAME + ' Already downloaded\n')
                 else:
                     file = sftp.get('/' + source + '/export/' + FILENAME)
-                    print("Downloaded: " + destination + str(source.split('_')[1]) + '/' + FILENAME)
+                    print("\nFinished downloading " + str(source.split('_')[1]) + '\n')
                 os.chdir('../..')
         sftp.close()
     except Exception as error:
         print(error)
 
-def download_all_unsubs(username,password,sources,list_dates):
+def download_MB_unsubs(username,password,sources,list_dates):
     for k in range(0,len(username)):
         downloadFile(username[k],password[k],sources[k],list_dates)
 
-download_all_unsubs(username,password,sources,list_dates)
+download_MB_unsubs(username,password,sources,list_dates)
