@@ -39,13 +39,13 @@ if __name__ == "__main__":
 
 np.seterr(divide='ignore', invalid='ignore')
 
-params = pd.read_json('../params.json')  # read file
+params = pd.read_json('params.json')  # read file
 params = params['params'].to_dict() # read the 'params' bloc
 
-server = params['server_CB']
-username = params['username_CB']
-password = params['password_CB']
-sources = params['DB_CB']
+server_CB = params['server_CB']
+usernames_CB = params['usernames_CB']
+passwords_CB = params['passwords_CB']
+DB_CB = params['DB_CB']
 destination = "csv/"
 day = str(int(dt.datetime.now().strftime('%Y%m%d')))  # Date of the day in format 'YYYYMMDD'
 filename = 'unsubs_' + str(day) + '.csv'
@@ -59,7 +59,7 @@ for k in range(0,7):
 # Make connection to sFTP
 def downloadFile(user, pw, source, list_dates):
     try :
-        ftp = FTP(server)
+        ftp = FTP(server_CB)
         ftp.login(user,pw)
         if not os.path.exists(destination + source + '/'):
             # create csv directory if not existing
@@ -81,9 +81,9 @@ def downloadFile(user, pw, source, list_dates):
     except Exception as error:
         print(error)
 
-def download_CB_unsubs(username,password,sources,list_dates):
-    for k in range(0,len(username)):
-        downloadFile(username[k],password[k],sources[k],list_dates)
+def download_CB_unsubs(usernames,passwords,sources,list_dates):
+    for k in range(0,len(usernames)):
+        downloadFile(usernames[k],passwords[k],sources[k],list_dates)
 
 def unzipping(day):
     try :
@@ -102,4 +102,6 @@ def unzipping(day):
     except Exception as error:
         print(error)
 
-download_CB_unsubs(username,password,sources,list_dates)
+if __name__ == "__main__":
+    # code to be executed only if this file is called with 'python file.py <arguments>'
+    pass

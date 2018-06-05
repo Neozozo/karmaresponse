@@ -38,44 +38,44 @@ if __name__ == "__main__":
 
 np.seterr(divide='ignore', invalid='ignore')
 
-params = pd.read_json('/../params.json')  # read file
+params = pd.read_json('params.json')  # read file
 params = params['params'].to_dict() # read the 'params' bloc
 
 mail_list = params['mail_list']
 folder_name = params['folder_name']
-yesterday = dt.datetime.now() - dt.timedelta(days=1)
-yesterday = yesterday.strftime('%d/%m/%Y')
-print(yesterday)
 
 # ===============================================================================
 # Class & functions
 # ===============================================================================
 
-def get_mails(mail, folder_name,startDate):
-    day = str(int(dt.datetime.now().strftime('%Y%m%d'))) # Date of the day in format 'YYYYMMDD'
+def get_mails(mail, folder_name,date):
+    startDate = date.strftime('%d/%m/%Y')
+    day = date.strftime('%Y%m%d')
     outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
     inbox = outlook.Folders(mail).Folders(folder_name)
-    print(inbox.Name)
     unsub = ['\n']
     messages = inbox.Items.restrict("[SentOn] > '{} 12:00 AM'".format(startDate)) # startDate format DD/MM/YYYY
-    with open('Daily/Unsub_Mail_{}.csv'.format(day), 'w') as fw:  # Open the file in which we will write today
+    os.chdir('./Mails')
+    with open('./Daily/Unsub_Mails_{}.csv'.format(day), 'a') as fw:  # Open the file in which we will write today
         for msg in messages:
             if msg.Class==43:
                 if msg.SenderEmailType=='EX':
-                    print(msg.Sender.GetExchangeUser().PrimarySmtpAddress)
-                    print('Type1')
-                    print(msg.ReceivedTime)
                     unsub.append(msg.Sender.GetExchangeUser().PrimarySmtpAddress + ', Mails')  # Add the mail address to the list
                 else:
-                    print(msg.SenderEmailAddress)
-                    print('Type2')
-                    print(msg.ReceivedTime)
                     unsub.append(msg.SenderEmailAddress + ', Mails')  # Add the mail address to the list
                 unsub = list(set(unsub))
-        print(unsub)
-        unsub = list(filter(None, unsub))
         unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
         fw.write(unsublist)  # Write in Unsub_Mail_{day}.csv
+        os.chdir('..')
+        return unsublist
 
-for mail in mail_list:
-    get_mails(mail, folder_name,yesterday)
+def get_mail_unsubs(mails, folder_name, daily):
+    Mailunsubs = '\n'
+    for mail in mails:
+        Mailunsubs += get_mails(mail, folder_name,daily)
+        print(Mailunsubs)
+    return Mailunsubs
+
+if __name__ == "__main__":
+    # code to be executed only if this file is called with 'python file.py <arguments>'
+    pass

@@ -104,7 +104,6 @@ def merge_drsender(file_paths, day): # Get all the unsub_files and merge them in
                                 unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_DS_{day}.csv
                     DS_unsubs += unsublist
-                    print('\nFinished merging DrSender for {}'.format(day) + '\n')
         fw.close()
         return DS_unsubs
 
@@ -136,7 +135,6 @@ def merge_mindbaz(file_paths, day): # Get all the unsub_files and merge them int
                                 unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                     fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                     MB_unsubs += unsublist
-                    print('\nFinished merging Mindbaz for {}'.format(day) + '\n')
         fw.close()
         return MB_unsubs
 
@@ -171,14 +169,13 @@ def merge_cerberoos(file_paths, day): # Get all the unsub_files and merge them i
                                     unsublist = '\n'.join(str(e) for e in unsub) # Turn the list into str to write in the global csv
                         fw.write(unsublist) # Write in Unsub_MB_{day}.csv
                         CB_unsubs += unsublist
-                        print('\nFinished merging Cerberoos for {}'.format(day) + '\n')
             fw.close()
             return CB_unsubs
     else:
         return ''
 
 
-def merge_all_daily(day,DSunsubs,MBunsubs,Mailunsubs,CBunsubs):
+def merge_all_daily(day,DSunsubs,DSunsubsDm1,MBunsubs,MBunsubsDm1,Mailunsubs,CBunsubs,CBunsubsDm1):
     """
     :param day, date of the wanted merging
     :param DSunsubs, list of unsubscribers of <day> on DrSender
@@ -189,7 +186,12 @@ def merge_all_daily(day,DSunsubs,MBunsubs,Mailunsubs,CBunsubs):
     """
     with open('MergedFiles/Daily/ALL_Daily_Unsubs_{}.csv'.format(day), 'w') as fw:
         ALL_unsubs = DSunsubs + MBunsubs + Mailunsubs + CBunsubs
-        fw.write(ALL_unsubs)
+        ALL_Dm1unsubs = DSunsubsDm1 + MBunsubsDm1 + CBunsubsDm1
+        ALL_unsubsLIST = ALL_unsubs.split('\n')
+        ALL_Dm1unsubsLIST = ALL_Dm1unsubs.split('\n')
+        ALL_unsubs_final = list(set(ALL_unsubsLIST) - set(ALL_Dm1unsubsLIST))
+        unsubs = '\n'.join(str(e) for e in ALL_unsubs_final) # Turn the list into str to write in the global csv
+        fw.write(unsubs)
         fw.close()
         print('\nFinished Global merging for {}'.format(day) + '\n')
 
@@ -240,7 +242,7 @@ def get_list_files_to_merge(list_dates):
         MBfile = 'Mindbaz/Daily/Unsub_MB_{}.csv'.format(date)
         if os.path.isfile(MBfile):
             MBlist.append('Mindbaz/Daily/Unsub_MB_{}.csv'.format(date))
-        Mailfile = 'Mails/Daily/Unsub_Mail_{}.csv'.format(date)
+        Mailfile = 'Mails/Daily/Unsub_Mails_{}.csv'.format(date)
         if os.path.isfile(Mailfile):
             Maillist.append('Mails/Daily/Unsub_Mail_{}.csv'.format(date))
         DSfile = 'DrSender/Daily/Unsub_DS_{}.csv'.format(date)
@@ -250,17 +252,13 @@ def get_list_files_to_merge(list_dates):
     return list_files_to_merge
 
 
-current_date = day
-DS,MB,CB,Mails = get_unsub_files(current_date)
-DSunsubs = merge_drsender(DS, current_date)
-MBunsubs = merge_mindbaz(MB, current_date)
-CBunsubs = merge_cerberoos(CB, current_date)
-merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
+# current_date = day
+# DS,MB,CB,Mails = get_unsub_files(current_date)
+# DSunsubs = merge_drsender(DS, current_date)
+# MBunsubs = merge_mindbaz(MB, current_date)
+# CBunsubs = merge_cerberoos(CB, current_date)
+# merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
 
-# for current_date in list_dates:
-#     DS,MB,CB,Mails = get_unsub_files(current_date)
-#     DSunsubs = merge_drsender(DS, current_date)
-#     MBunsubs = merge_mindbaz(MB, current_date)
-#     CBunsubs = merge_cerberoos(CB, current_date)
-#     merge_all_daily(current_date,DSunsubs,MBunsubs,'',CBunsubs)
-# merge_all_weekly(day)
+if __name__ == "__main__":
+    # code to be executed only if this file is called with 'python file.py <arguments>'
+    pass
